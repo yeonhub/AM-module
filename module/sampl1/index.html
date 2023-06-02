@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<style>
+    .box {
+        width: 500px;
+        border: 1px solid #000;
+        margin: 40px auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .box .btns {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box .btns .btn {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        background: lightpink;
+    }
+
+    .box ul {}
+
+    .box ul li {
+        display: block;
+        width: 420px;
+        height: 150px;
+        margin: 10px;
+        border: 1px solid gray;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    .box ul li img {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+
+    .box ul li strong {
+        margin: 10px;
+    }
+
+    .box ul li strong p {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .box ul li i {
+        display: block;
+        margin: auto;
+        font-size: 40px;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="btns">
+            <button class="btn del">명단삭제</button>
+            <button class="btn show">명단보기</button>
+        </div>
+        <ul>
+        </ul>
+    </div>
+    <script type="module">
+        const arr = [
+            { name: '펭귄', img: 'img0.png', job: '어부', tel: '010-4521-1313' },
+            { name: '악어', img: 'img1.png', job: '목수', tel: '010-2342-1313' },
+            { name: '삑삑이', img: 'img2.png', job: '경찰', tel: '010-2136-1313' },
+            { name: '루피', img: 'img3.png', job: '대장장이', tel: '010-1122-1313' },
+            { name: '누렁이', img: 'img4.png', job: '전사', tel: '010-8955-1313' },
+            { name: '북극곰', img: 'img5.png', job: '가수', tel: '010-6112-1313' }
+        ]
+        let ul = document.querySelector('ul')
+        let del = document.querySelector('.del')
+        let show = document.querySelector('.show')
+        let i = document.querySelectorAll('i')
+
+        function showList() {
+            ul.innerHTML = ''
+            const newObj = arr.map(ele => {
+                const { name, img, job, tel } = ele;
+                return `
+        <li>
+        <img src="../images/${img}" alt="">
+        <strong>
+            <p>${name}</p>
+            <p>${job}</p>
+            <p>${tel}</p>
+        </strong>
+        <i class="xi-heart-o"></i>
+        </li>
+        `
+            }).join('')
+            ul.innerHTML = newObj;
+            i = document.querySelectorAll('i')
+            i.forEach(ele => {
+                ele.addEventListener('click', e => {
+                    if (e.target.className === 'xi-heart-o') {
+                        e.target.className = 'xi-heart'
+                    } else {
+                        e.target.className = 'xi-heart-o'
+                    }
+                })
+            })
+        }
+        del.addEventListener('click', e => {
+            ul.innerHTML = ''
+        })
+        show.addEventListener('click', e => {
+            showList();
+        })
+        showList();
+    </script>
+</body>
+
+</html>

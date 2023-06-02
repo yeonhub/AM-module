@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<style>
+    .box {
+        width: 500px;
+        border: 1px solid #000;
+        margin: 40px auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .box .btns {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box .btns .btn {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        background: lightpink;
+    }
+
+    .box ul {}
+
+    .box ul li {
+        display: block;
+        width: 420px;
+        height: 150px;
+        margin: 10px;
+        border: 1px solid gray;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    .box ul li img {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+
+    .box ul li strong {
+        margin: 10px;
+    }
+
+    .box ul li strong p {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .box ul li i {
+        display: block;
+        margin: auto;
+        font-size: 40px;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="btns">
+            <button class="btn del">명단삭제</button>
+            <button class="btn show">명단보기</button>
+        </div>
+        <ul>
+        </ul>
+    </div>
+    <script type="module" src="./module/showList.js">
+
+    </script>
+</body>
+
+</html>
