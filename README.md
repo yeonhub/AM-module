@@ -23,8 +23,9 @@
      ```
      html에서 script 작성 시 type="module"을 추가해 주고 import로 내보낸 script의 함수를 받는다.
 
-        <img src="./images/ex1.png">
+     <img src="./images/ex1.png">
 3. ## module 추가 사용법
+
 
    - ```javascript
      const num = 200;
@@ -51,7 +52,9 @@
 
      export default make3
      ```
-    위 코드 처럼 function 뿐만 아니라 매개변수가 들어있는 function, 객체, 배열, class를 모두 module로 만들 수 있다.
+
+   위 코드 처럼 function 뿐만 아니라 매개변수가 들어있는 function, 객체, 배열, class를 모두 module로 만들 수 있다.
+
    - ```html
        <script type="module">
          import { num, make1, make2, Person, obj, arr } from "./module/test2.js";
@@ -70,18 +73,18 @@
          console.log(arr[3]);
        </script>
      ```
-        <img src="./images/ex2.png">
+     <img src="./images/ex2.png">
 4. ## module 예제
+
    #### 구현 기능
 
+
    - 명단삭제 / 명단보기
-   
+
      <img src="./images/show.gif">
-     
    - 좋아요
-   
+
      <img src="./images/like.gif">
-     
 
    1. step #1 (module 사용 X)
 
@@ -292,4 +295,4 @@
    }
    export default showList;
    ```
-    step3에서 querySelector 함수와 showList 함수를 비구조 할당 형식으로 분리하여 첫 번째로 import 받는 arr 배열을 값으로 받아 return을 한 뒤 ul.innerHTML = showList(arr);를 통해 화면에 출력시켜 주었다.
+   step3에서 querySelector 함수와 showList 함수를 비구조 할당 형식으로 분리하여 첫 번째로 import 받는 arr 배열을 값으로 받아 return을 한 뒤 ul.innerHTML = showList(arr);를 통해 화면에 출력시켜 주었다.
